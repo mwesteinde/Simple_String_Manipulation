@@ -10,7 +10,7 @@ public class StringUtility {
      * methods are charAt, length(), trim, substring, indexOf, isEmpty,
      * lastIndexOf, startsWith, endsWith, split.
      */
-
+//exercise
     /**
      * Return true iff str is a palindrome: it reads the same backwards and
      * forwards.

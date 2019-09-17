@@ -7,7 +7,7 @@ public class Main {
         System.out.println("The length of " + s1 + " is " + s1.length());
         System.out.println("The first character of " + s1 + " is " + s1.charAt(0));
 
-        // let us use one of the methods in the StringUtility class
+        // let us use one of the methods in the StringUtility classs
         // for static methods in a class, we use the syntax:
         // ClassName.methodName()
         // and the following is an example
