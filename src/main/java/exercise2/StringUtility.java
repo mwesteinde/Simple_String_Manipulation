@@ -24,12 +24,23 @@ public class StringUtility {
      * @return true if str is a palindrome and false otherwise
      */
     public static boolean isPalindrome(String str) {
-        // Do not visit each character of the string more than once
-        // each.
+        int StringLength=str.length();
+        int i;
 
-        // TODO: Implement this method
+        if (str==null){
+            return false;
+        }
 
-        return false;
+        if (str.isEmpty()){
+            return true;
+        }
+
+        for (i=0;i<StringLength/2;i++){
+            if (str.charAt(i)!=str.charAt(StringLength-1-i)){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -46,7 +57,25 @@ public class StringUtility {
      * a palindrome and false otherwise.
      */
     public static boolean hasPalindromicSubstring(String str) {
-        // TODO: Implement this method
+        int StringLength=str.length();
+        int i;
+
+        if (str.isEmpty()||(str == null)){
+            return false;
+        }
+        if (isPalindrome(str)){
+            return true;
+        }
+        for (i=0;i<StringLength-1;i++){
+            if (str.charAt(i)==str.charAt(i+1)){
+                return true;
+            }
+        }
+        for (i=0;i<StringLength-2;i++) {
+            if (str.charAt(i) == str.charAt(i + 2)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -62,9 +91,35 @@ public class StringUtility {
      * @return a count of the number of times query appears in mainString
      */
     public static int countOccurrences(String mainString, String query) {
-        // TODO: Implement this method
-        return -1;
+        int SubStringLength=query.length();
+        int MainStringLength=mainString.length();
+        int count=0;
+        int counter=0;
+        int i=0;
+        int j;
+
+        for (i=0;i<=(MainStringLength-SubStringLength);i++){
+            for (j=0;j<SubStringLength;j++){
+                if (mainString.charAt(i+j)!=query.charAt(j)){
+                    break;
+                }
+                else {
+                    counter++;
+
+                }
+
+            }
+            if(counter==SubStringLength){
+                count++;
+                counter=0;
+            }
+
+        }
+
+        return count;
     }
+
+
 
     /**
      * Return true iff s1 and s2 are anagrams of each other. An anagram of a
@@ -81,7 +136,40 @@ public class StringUtility {
      * @return true if s2 is an anagram of s1, and false otherwise
      */
     public static boolean areAnagrams(String s1, String s2) {
-        // TODO: Implement this method
+        int [] array1=new int[53];
+        int [] array2=new int[53];
+        int lengths1=s1.length();
+        int lengths2=s2.length();
+        int i;
+        char c;
+        int place;
+
+        for (i=0;i<lengths1;i++){
+            c=s1.charAt(i);
+            place= (int) c;
+            if (place==32)
+                array1[52]++;
+            if (place>64&&place<91)
+                array1[place-65]++;
+            if (place>96&&place<123)
+                array1[place-71]++;
+        }
+        for (i=0;i<lengths2;i++){
+            c=s2.charAt(i);
+            place= (int) c;
+            if (place==32)
+                array2[52]++;
+            if (place>64&&place<91)
+                array2[place-65]++;
+            if (place>96&&place<123)
+                array2[place-71]++;
+        }
+        if (Arrays.equals(array1,array2))
+            return true;
+        else
+            return false;
+
+
 
         // You do not need to use iteration/recursion.
         // Hint: how can a sequence of characters be uniquely ordered
@@ -89,7 +177,6 @@ public class StringUtility {
         // characters, and then use a function from class
         // [`Arrays`](http://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html).
 
-        return false;
     }
 
 }
