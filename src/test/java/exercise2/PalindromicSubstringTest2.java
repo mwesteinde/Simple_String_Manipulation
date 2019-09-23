@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class PalindromicSubstringTest {
+public class PalindromicSubstringTest2 {
 
     @Test
     public void test1() {
@@ -34,5 +34,20 @@ public class PalindromicSubstringTest {
     @Test
     public void test6() {
         assertEquals(false, StringUtility.hasPalindromicSubstring(""));
+    }
+
+    @Test
+    public void test7() {
+        assertEquals(true, StringUtility.hasPalindromicSubstring("   "));
+    }
+
+    @Test
+    public void test8() {
+        assertEquals(false, StringUtility.hasPalindromicSubstring("ab"));
+    }
+
+    @Test
+    public void test9() {
+        assertEquals(true, StringUtility.hasPalindromicSubstring("where ama i deed?>"));
     }
 }

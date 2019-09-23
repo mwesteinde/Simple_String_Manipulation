@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class NumOccurrencesTest {
+public class NumOccurrencesTest2 {
 
     @Test
     public void test1() {
@@ -75,4 +75,26 @@ public class NumOccurrencesTest {
     public void test14() {
         assertEquals(5, StringUtility.countOccurrences("auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB", "obo"));
     }
+
+    @Test
+    public void test15() {
+        assertEquals(3, StringUtility.countOccurrences("auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB", "obob"));
+    }
+
+    @Test
+    public void test16() {
+        assertEquals(1, StringUtility.countOccurrences("auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB", "o\tb"));
+    }
+
+    @Test
+    public void test17() {
+        assertEquals(0, StringUtility.countOccurrences("auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB", ",!"));
+    }
+
+    @Test
+    public void test18() {
+        assertEquals(0, StringUtility.countOccurrences("auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB",
+                "auoeunboboo:-):)eubobob, !bo\tb0ntonethboboboboB "));
+    }
+
 }
